@@ -1,0 +1,120 @@
+   1               		.file	"main.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	setup
+  18               	setup:
+  19               	.LFB7:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 80E2      		ldi r24,lo8(32)
+  25 0002 84B9      		out 36-32,r24
+  26               	.LM3:
+  27 0004 15B8      		out 37-32,__zero_reg__
+  28               	/* epilogue start */
+  29               	.LM4:
+  30 0006 0895      		ret
+  31               	.LFE7:
+  33               	.global	main
+  35               	main:
+  36               	.LFB8:
+  37               	.LM5:
+  38               	/* prologue: function */
+  39               	/* frame size = 0 */
+  40               	.LBB20:
+  41               	.LBB21:
+  42               	.LM6:
+  43 0008 80E2      		ldi r24,lo8(32)
+  44 000a 84B9      		out 36-32,r24
+  45               	.LM7:
+  46 000c 15B8      		out 37-32,__zero_reg__
+  47               	.LBE21:
+  48               	.LBE20:
+  49               	.LBB22:
+  50               	.LBB23:
+  51               	.LBB24:
+  52               	.LBB25:
+  53               	.LM8:
+  54 000e 20E9      		ldi r18,lo8(400)
+  55 0010 31E0      		ldi r19,hi8(400)
+  56               	.LVL0:
+  57               	.L6:
+  58               	.LBE25:
+  59               	.LBE24:
+  60               	.LBE23:
+  61               	.LBE22:
+  62               	.LM9:
+  63 0012 2D9A      		sbi 37-32,5
+  64 0014 80E1      		ldi r24,lo8(10000)
+  65 0016 97E2      		ldi r25,hi8(10000)
+  66               	.LVL1:
+  67               	.L4:
+  68               	.LBB29:
+  69               	.LBB28:
+  70               	.LBB27:
+  71               	.LBB26:
+  72               	.LM10:
+  73 0018 F901      		movw r30,r18
+  74               	.LVL2:
+  75               	/* #APP */
+  76               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+  77 001a 3197      		1: sbiw r30,1
+  78 001c 01F4      		brne 1b
+  79               	 ;  0 "" 2
+  80               	/* #NOAPP */
+  81               	.LBE26:
+  82               	.LBE27:
+  83               	.LM11:
+  84 001e 0197      		sbiw r24,1
+  85               	.LM12:
+  86 0020 01F4      		brne .L4
+  87               	.LBE28:
+  88               	.LBE29:
+  89               	.LM13:
+  90 0022 2D98      		cbi 37-32,5
+  91 0024 8CE4      		ldi r24,lo8(7500)
+  92 0026 9DE1      		ldi r25,hi8(7500)
+  93               	.LVL3:
+  94               	.L5:
+  95               	.LBB30:
+  96               	.LBB31:
+  97               	.LBB32:
+  98               	.LBB33:
+  99               	.LM14:
+ 100 0028 F901      		movw r30,r18
+ 101               	.LVL4:
+ 102               	/* #APP */
+ 103               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 104 002a 3197      		1: sbiw r30,1
+ 105 002c 01F4      		brne 1b
+ 106               	 ;  0 "" 2
+ 107               	/* #NOAPP */
+ 108               	.LBE33:
+ 109               	.LBE32:
+ 110               	.LM15:
+ 111 002e 0197      		sbiw r24,1
+ 112               	.LM16:
+ 113 0030 01F4      		brne .L5
+ 114 0032 00C0      		rjmp .L6
+ 115               	.LBE31:
+ 116               	.LBE30:
+ 117               	.LFE8:
+ 151               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\Barth\AppData\Local\Temp/ccHk1BK1.s:2      *ABS*:0000003f __SREG__
+C:\Users\Barth\AppData\Local\Temp/ccHk1BK1.s:3      *ABS*:0000003e __SP_H__
+C:\Users\Barth\AppData\Local\Temp/ccHk1BK1.s:4      *ABS*:0000003d __SP_L__
+C:\Users\Barth\AppData\Local\Temp/ccHk1BK1.s:5      *ABS*:00000034 __CCP__
+C:\Users\Barth\AppData\Local\Temp/ccHk1BK1.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\Barth\AppData\Local\Temp/ccHk1BK1.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\Barth\AppData\Local\Temp/ccHk1BK1.s:18     .text:00000000 setup
+C:\Users\Barth\AppData\Local\Temp/ccHk1BK1.s:35     .text:00000008 main
+
+NO UNDEFINED SYMBOLS
