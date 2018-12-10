@@ -1,0 +1,1 @@
+timerExternal.o: timerExternal.c
