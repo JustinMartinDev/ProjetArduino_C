@@ -70,11 +70,7 @@ FORMAT = ihex
 
 
 # Target file name (without extension).
-<<<<<<< HEAD
-TARGET = main
-=======
-TARGET = serial
->>>>>>> 52f6f1ec5a54834474a0c0613a6dc16638be2c7a
+TARGET = timer
 
 
 # Object files directory

@@ -1,0 +1,137 @@
+   1               		.file	"timer.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	setup
+  18               	setup:
+  19               	.LFB7:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 80E1      		ldi r24,lo8(16)
+  25 0002 8AB9      		out 42-32,r24
+  26               	.LM3:
+  27 0004 1BB8      		out 43-32,__zero_reg__
+  28               	.LM4:
+  29 0006 80E8      		ldi r24,lo8(-128)
+  30 0008 8FBF      		out __SREG__,r24
+  31               	.LM5:
+  32 000a 1092 8000 		sts 128,__zero_reg__
+  33               	.LM6:
+  34 000e 85E0      		ldi r24,lo8(5)
+  35 0010 8093 8100 		sts 129,r24
+  36               	.LM7:
+  37 0014 81E0      		ldi r24,lo8(1)
+  38 0016 8093 6F00 		sts 111,r24
+  39               	.LM8:
+  40 001a 86EF      		ldi r24,lo8(-15626)
+  41 001c 92EC      		ldi r25,hi8(-15626)
+  42 001e 9093 8500 		sts (132)+1,r25
+  43 0022 8093 8400 		sts 132,r24
+  44               	/* epilogue start */
+  45               	.LM9:
+  46 0026 0895      		ret
+  47               	.LFE7:
+  49               	.global	__vector_13
+  51               	__vector_13:
+  52               	.LFB8:
+  53               	.LM10:
+  54 0028 1F92      		push __zero_reg__
+  55 002a 0F92      		push r0
+  56 002c 0FB6      		in r0,__SREG__
+  57 002e 0F92      		push r0
+  58 0030 1124      		clr __zero_reg__
+  59 0032 2F93      		push r18
+  60 0034 3F93      		push r19
+  61 0036 8F93      		push r24
+  62 0038 9F93      		push r25
+  63               	/* prologue: Signal */
+  64               	/* frame size = 0 */
+  65               	.LM11:
+  66 003a 8FB7      		in r24,__SREG__
+  67 003c 1FBE      		out __SREG__,__zero_reg__
+  68               	.LM12:
+  69 003e 8BB1      		in r24,43-32
+  70 0040 94E0      		ldi r25,lo8(4)
+  71 0042 8927      		eor r24,r25
+  72 0044 8BB9      		out 43-32,r24
+  73               	.LM13:
+  74 0046 86B3      		in r24,54-32
+  75 0048 16BA      		out 54-32,__zero_reg__
+  76               	.LM14:
+  77 004a 2091 0000 		lds r18,first
+  78 004e 3091 0000 		lds r19,(first)+1
+  79 0052 20FD      		sbrc r18,0
+  80 0054 00C0      		rjmp .L4
+  81 0056 86EF      		ldi r24,lo8(-15626)
+  82 0058 92EC      		ldi r25,hi8(-15626)
+  83 005a 00C0      		rjmp .L7
+  84               	.L4:
+  85               	.LM15:
+  86 005c 80E6      		ldi r24,lo8(-5536)
+  87 005e 9AEE      		ldi r25,hi8(-5536)
+  88               	.L7:
+  89 0060 9093 8500 		sts (132)+1,r25
+  90 0064 8093 8400 		sts 132,r24
+  91               	.LM16:
+  92 0068 2F5F      		subi r18,lo8(-(1))
+  93 006a 3F4F      		sbci r19,hi8(-(1))
+  94 006c 3093 0000 		sts (first)+1,r19
+  95 0070 2093 0000 		sts first,r18
+  96               	.LM17:
+  97 0074 8091 6F00 		lds r24,111
+  98 0078 8160      		ori r24,lo8(1)
+  99 007a 8093 6F00 		sts 111,r24
+ 100               	.LM18:
+ 101 007e 8FB7      		in r24,__SREG__
+ 102 0080 8068      		ori r24,lo8(-128)
+ 103 0082 8FBF      		out __SREG__,r24
+ 104               	/* epilogue start */
+ 105               	.LM19:
+ 106 0084 9F91      		pop r25
+ 107 0086 8F91      		pop r24
+ 108 0088 3F91      		pop r19
+ 109 008a 2F91      		pop r18
+ 110 008c 0F90      		pop r0
+ 111 008e 0FBE      		out __SREG__,r0
+ 112 0090 0F90      		pop r0
+ 113 0092 1F90      		pop __zero_reg__
+ 114 0094 1895      		reti
+ 115               	.LFE8:
+ 117               	.global	main
+ 119               	main:
+ 120               	.LFB9:
+ 121               	.LM20:
+ 122               	/* prologue: function */
+ 123               	/* frame size = 0 */
+ 124               	.LM21:
+ 125 0096 0E94 0000 		call setup
+ 126               	.L9:
+ 127 009a 00C0      		rjmp .L9
+ 128               	.LFE9:
+ 130               	.global	first
+ 131               	.global	first
+ 132               		.section .bss
+ 135               	first:
+ 136 0000 0000      		.skip 2,0
+ 177               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 timer.c
+C:\Users\Barth\AppData\Local\Temp/ccZo9wUI.s:2      *ABS*:0000003f __SREG__
+C:\Users\Barth\AppData\Local\Temp/ccZo9wUI.s:3      *ABS*:0000003e __SP_H__
+C:\Users\Barth\AppData\Local\Temp/ccZo9wUI.s:4      *ABS*:0000003d __SP_L__
+C:\Users\Barth\AppData\Local\Temp/ccZo9wUI.s:5      *ABS*:00000034 __CCP__
+C:\Users\Barth\AppData\Local\Temp/ccZo9wUI.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\Barth\AppData\Local\Temp/ccZo9wUI.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\Barth\AppData\Local\Temp/ccZo9wUI.s:18     .text:00000000 setup
+C:\Users\Barth\AppData\Local\Temp/ccZo9wUI.s:51     .text:00000028 __vector_13
+C:\Users\Barth\AppData\Local\Temp/ccZo9wUI.s:135    .bss:00000000 first
+C:\Users\Barth\AppData\Local\Temp/ccZo9wUI.s:119    .text:00000096 main
+
+UNDEFINED SYMBOLS
+__do_clear_bss
