@@ -1,0 +1,200 @@
+   1               		.file	"main.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               	.global	setup
+  12               	setup:
+  13               	.LFB7:
+  14               		.file 1 "main.c"
+   1:main.c        **** #include <avr/io.h>
+   2:main.c        **** #include <stdio.h>
+   3:main.c        **** #include <util/delay.h>
+   4:main.c        **** #include <avr/interrupt.h>
+   5:main.c        **** 
+   6:main.c        **** void setup (void);
+   7:main.c        **** int first = 0;
+   8:main.c        **** 
+   9:main.c        **** void setup (void){
+  15               		.loc 1 9 0
+  16               		.cfi_startproc
+  17               	/* prologue: function */
+  18               	/* frame size = 0 */
+  19               	/* stack size = 0 */
+  20               	.L__stack_usage = 0
+  10:main.c        **** 
+  11:main.c        **** 	DDRD = 0b00010000; //initialisation des inputs et outputs sur D2
+  21               		.loc 1 11 0
+  22 0000 80E1      		ldi r24,lo8(16)
+  23 0002 8AB9      		out 0xa,r24
+  12:main.c        **** 	PORTD = 0b00000000; //Initialisation du port D
+  24               		.loc 1 12 0
+  25 0004 1BB8      		out 0xb,__zero_reg__
+  13:main.c        **** 	
+  14:main.c        **** 	SREG  = 0b10000000; //Permet les interruptions
+  26               		.loc 1 14 0
+  27 0006 80E8      		ldi r24,lo8(-128)
+  28 0008 8FBF      		out __SREG__,r24
+  15:main.c        **** 	TCCR1A = 0b00000000;//Initialisation du mode de fonctionnement du timer
+  29               		.loc 1 15 0
+  30 000a 1092 8000 		sts 128,__zero_reg__
+  16:main.c        **** 	TCCR1B = 0b00000101;//Initialisation de la frequence du registre
+  31               		.loc 1 16 0
+  32 000e 85E0      		ldi r24,lo8(5)
+  33 0010 8093 8100 		sts 129,r24
+  17:main.c        **** 	TIMSK1 = 0b00000001;
+  34               		.loc 1 17 0
+  35 0014 81E0      		ldi r24,lo8(1)
+  36 0016 8093 6F00 		sts 111,r24
+  18:main.c        **** 	TCNT1 =  49910; //65535 -(1/64*10^6) : 1000ms	//compteur initialisé
+  37               		.loc 1 18 0
+  38 001a 86EF      		ldi r24,lo8(-10)
+  39 001c 92EC      		ldi r25,lo8(-62)
+  40 001e 9093 8500 		sts 132+1,r25
+  41 0022 8093 8400 		sts 132,r24
+  42 0026 0895      		ret
+  43               		.cfi_endproc
+  44               	.LFE7:
+  46               	.global	__vector_13
+  48               	__vector_13:
+  49               	.LFB8:
+  19:main.c        **** }
+  20:main.c        **** 
+  21:main.c        **** 
+  22:main.c        **** /*function déclancher à chaque interruption */
+  23:main.c        **** ISR(TIMER1_OVF_vect){
+  50               		.loc 1 23 0
+  51               		.cfi_startproc
+  52 0028 1F92      		push r1
+  53               	.LCFI0:
+  54               		.cfi_def_cfa_offset 3
+  55               		.cfi_offset 1, -2
+  56 002a 0F92      		push r0
+  57               	.LCFI1:
+  58               		.cfi_def_cfa_offset 4
+  59               		.cfi_offset 0, -3
+  60 002c 0FB6      		in r0,__SREG__
+  61 002e 0F92      		push r0
+  62 0030 1124      		clr __zero_reg__
+  63 0032 8F93      		push r24
+  64               	.LCFI2:
+  65               		.cfi_def_cfa_offset 5
+  66               		.cfi_offset 24, -4
+  67 0034 9F93      		push r25
+  68               	.LCFI3:
+  69               		.cfi_def_cfa_offset 6
+  70               		.cfi_offset 25, -5
+  71               	/* prologue: Signal */
+  72               	/* frame size = 0 */
+  73               	/* stack size = 5 */
+  74               	.L__stack_usage = 5
+  24:main.c        **** 	SREG &= 0b00000000;//Bloque les interruptions
+  75               		.loc 1 24 0
+  76 0036 8FB7      		in r24,__SREG__
+  77 0038 1FBE      		out __SREG__,__zero_reg__
+  25:main.c        **** 	
+  26:main.c        **** 	PORTD ^= 0b00000100; // Allume/Eteint la led en fonction de leur etat
+  78               		.loc 1 26 0
+  79 003a 9BB1      		in r25,0xb
+  80 003c 84E0      		ldi r24,lo8(4)
+  81 003e 8927      		eor r24,r25
+  82 0040 8BB9      		out 0xb,r24
+  27:main.c        **** 	
+  28:main.c        **** 	TIFR1 &= 0b00000000;
+  83               		.loc 1 28 0
+  84 0042 86B3      		in r24,0x16
+  85 0044 16BA      		out 0x16,__zero_reg__
+  29:main.c        **** 	
+  30:main.c        **** 	if(first%2 == 0) TCNT1 = 49910;
+  86               		.loc 1 30 0
+  87 0046 8091 0000 		lds r24,first
+  88 004a 80FD      		sbrc r24,0
+  89 004c 00C0      		rjmp .L3
+  90               		.loc 1 30 0 is_stmt 0 discriminator 1
+  91 004e 86EF      		ldi r24,lo8(-10)
+  92 0050 92EC      		ldi r25,lo8(-62)
+  93 0052 00C0      		rjmp .L5
+  94               	.L3:
+  31:main.c        **** 	else TCNT1 = 60000; //on reduit le temps de la prochaine interruption 1 fois sur 2
+  95               		.loc 1 31 0 is_stmt 1
+  96 0054 80E6      		ldi r24,lo8(96)
+  97 0056 9AEE      		ldi r25,lo8(-22)
+  98               	.L5:
+  99 0058 9093 8500 		sts 132+1,r25
+ 100 005c 8093 8400 		sts 132,r24
+  32:main.c        **** 	first++;
+ 101               		.loc 1 32 0
+ 102 0060 8091 0000 		lds r24,first
+ 103 0064 9091 0000 		lds r25,first+1
+ 104 0068 0196      		adiw r24,1
+ 105 006a 9093 0000 		sts first+1,r25
+ 106 006e 8093 0000 		sts first,r24
+  33:main.c        **** 	
+  34:main.c        **** 	TIMSK1 |= 0b00000001;
+ 107               		.loc 1 34 0
+ 108 0072 8091 6F00 		lds r24,111
+ 109 0076 8160      		ori r24,lo8(1)
+ 110 0078 8093 6F00 		sts 111,r24
+  35:main.c        **** 	SREG |= 0b10000000;//Autorise les interruptions
+ 111               		.loc 1 35 0
+ 112 007c 8FB7      		in r24,__SREG__
+ 113 007e 8068      		ori r24,lo8(-128)
+ 114 0080 8FBF      		out __SREG__,r24
+ 115               	/* epilogue start */
+  36:main.c        **** }
+ 116               		.loc 1 36 0
+ 117 0082 9F91      		pop r25
+ 118 0084 8F91      		pop r24
+ 119 0086 0F90      		pop r0
+ 120 0088 0FBE      		out __SREG__,r0
+ 121 008a 0F90      		pop r0
+ 122 008c 1F90      		pop r1
+ 123 008e 1895      		reti
+ 124               		.cfi_endproc
+ 125               	.LFE8:
+ 127               		.section	.text.startup,"ax",@progbits
+ 128               	.global	main
+ 130               	main:
+ 131               	.LFB9:
+  37:main.c        **** 
+  38:main.c        **** int main (void) {
+ 132               		.loc 1 38 0
+ 133               		.cfi_startproc
+ 134               	/* prologue: function */
+ 135               	/* frame size = 0 */
+ 136               	/* stack size = 0 */
+ 137               	.L__stack_usage = 0
+  39:main.c        **** 	
+  40:main.c        **** 	setup();
+ 138               		.loc 1 40 0
+ 139 0000 0E94 0000 		call setup
+ 140               	.LVL0:
+ 141               	.L8:
+ 142 0004 00C0      		rjmp .L8
+ 143               		.cfi_endproc
+ 144               	.LFE9:
+ 146               	.global	first
+ 147               		.section .bss
+ 150               	first:
+ 151 0000 0000      		.zero	2
+ 152               		.text
+ 153               	.Letext0:
+ 154               		.file 2 "/usr/lib/avr/include/stdint.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 main.c
+     /tmp/ccIhVjEA.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccIhVjEA.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccIhVjEA.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccIhVjEA.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccIhVjEA.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccIhVjEA.s:12     .text:0000000000000000 setup
+     /tmp/ccIhVjEA.s:48     .text:0000000000000028 __vector_13
+     /tmp/ccIhVjEA.s:150    .bss:0000000000000000 first
+     /tmp/ccIhVjEA.s:130    .text.startup:0000000000000000 main
+
+UNDEFINED SYMBOLS
+__do_clear_bss
