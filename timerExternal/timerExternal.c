@@ -7,13 +7,13 @@ void setup (void);
 void setup (void)
 {
 
-	DDRD = 0b00010000; //initialisation des inputs et outputs sur D2
-	PORTD = 0b00000000; //Initialisation du port D
+	DDRD = 0b00110100; //initialisation des inputs et outputs sur D
+	PORTD = 0b00100000; //Initialisation du port D (D5 sous tension)
 	
 	SREG  = 0b10000000; //Permet les interruptions
 
 	
-	EICRA = 0b00001100;
+	EICRA = 0b00000100; //Déclenchement sur changement de niveau logique
 	EIMSK = 0b00000010;
 	
 	
@@ -24,8 +24,11 @@ void setup (void)
 ISR(INT1_vect){
 	SREG &= 0b00000000;//Bloque les interruptions
 	
-	PORTD ^= 0b00000100; // Allume/Eteint la led
+	PORTD ^= 0b00100100; // Allume/Eteint la led (changement d'etat)
+	
 
+	
+	
 	EIFR &= 0b00000000;//INTF1 à 0
 
 	
@@ -40,9 +43,13 @@ int main (void)
 	
 	
 
-    while(1) // Exécution en continue du programme
+    while(1) // Exécution en continu du programme
     {
 		
+		PORTD |= 0b00010000; //allumer only D4
+		_delay_ms (1000);
+		PORTD &= 0b11101111; //eteindre D4
+		_delay_ms (1000);
     }
 
 	

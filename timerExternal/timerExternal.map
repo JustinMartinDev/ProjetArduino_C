@@ -114,7 +114,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000       0xe2
+.text           0x00000000      0x10a
  *(.vectors)
  .vectors       0x00000000       0x68 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
                 0x00000000                __vectors
@@ -191,19 +191,19 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
                 0x0000007c                __vector_16
                 0x0000007c                __vector_18
                 0x0000007c                __vector_20
- .text          0x00000080       0x5e timerExternal.o
-                0x000000c8                main
-                0x00000096                __vector_2
+ .text          0x00000080       0x86 timerExternal.o
+                0x000000ca                main
+                0x00000098                __vector_2
                 0x00000080                setup
- .text          0x000000de        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x000000de                . = ALIGN (0x2)
+ .text          0x00000106        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x00000106                . = ALIGN (0x2)
  *(.text.*)
- .text.libgcc   0x000000de        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x000000de                . = ALIGN (0x2)
+ .text.libgcc   0x00000106        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x00000106                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000000de        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x000000de                exit
-                0x000000de                _exit
+ .fini9         0x00000106        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x00000106                exit
+                0x00000106                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -222,11 +222,11 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000000de        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000106        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x000000e2                _etext = .
+                0x0000010a                _etext = .
 
-.data           0x00800100        0x0 load address 0x000000e2
+.data           0x00800100        0x0 load address 0x0000010a
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800100        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
@@ -249,8 +249,8 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.bss*)
  *(COMMON)
                 0x00800100                PROVIDE (__bss_end, .)
-                0x000000e2                __data_load_start = LOADADDR (.data)
-                0x000000e2                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x0000010a                __data_load_start = LOADADDR (.data)
+                0x0000010a                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00800100        0x0
                 0x00800100                PROVIDE (__noinit_start, .)
@@ -319,35 +319,39 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .debug_pubnames
                 0x00000000       0x34 timerExternal.o
 
-.debug_info     0x00000000       0xbb
+.debug_info     0x00000000      0x19b
  *(.debug_info)
- .debug_info    0x00000000       0xbb timerExternal.o
+ .debug_info    0x00000000      0x19b timerExternal.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev   0x00000000       0x83
+.debug_abbrev   0x00000000      0x11b
  *(.debug_abbrev)
- .debug_abbrev  0x00000000       0x83 timerExternal.o
+ .debug_abbrev  0x00000000      0x11b timerExternal.o
 
-.debug_line     0x00000000       0xeb
+.debug_line     0x00000000      0x1d7
  *(.debug_line)
- .debug_line    0x00000000       0xeb timerExternal.o
+ .debug_line    0x00000000      0x1d7 timerExternal.o
 
 .debug_frame    0x00000000       0x40
  *(.debug_frame)
  .debug_frame   0x00000000       0x40 timerExternal.o
 
-.debug_str      0x00000000       0xbd
+.debug_str      0x00000000      0x100
  *(.debug_str)
- .debug_str     0x00000000       0xbd timerExternal.o
-                                 0xf6 (size before relaxing)
+ .debug_str     0x00000000      0x100 timerExternal.o
+                                0x139 (size before relaxing)
 
-.debug_loc
+.debug_loc      0x00000000       0x80
  *(.debug_loc)
+ .debug_loc     0x00000000       0x80 timerExternal.o
 
 .debug_macinfo
  *(.debug_macinfo)
 OUTPUT(timerExternal.elf elf32-avr)
 LOAD linker stubs
+
+.debug_ranges   0x00000000       0x48
+ .debug_ranges  0x00000000       0x48 timerExternal.o
 
 Cross Reference Table
 
