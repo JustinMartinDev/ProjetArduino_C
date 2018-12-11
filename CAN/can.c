@@ -12,14 +12,14 @@ static int uart_putchar(char c, FILE *stream);
 void setup (void)
 {
 
-	DDRD = 0b00110000; // broche D4 et D5
+	DDRD = 0b01110000; // broche D4 et D5
 	PORTD = 0b00000000; //Port D
 	
 	DDRC = 0b00000000; //initialisation des inputs sur A0
 	PORTC = 0b00000001; //Initialisation du port C
 	
 	ADCSRA = 0b10000010;//Initialisation du CAN
-	ADCSRB = 0b00000000;//Mode de déclanchement CAN
+	ADCSRB = 0b00000000;//Mode de déclenchement CAN
 	ADMUX = 0b01000000;	
 	
 }
@@ -68,17 +68,27 @@ int main (void)
 	setup();
 	init_USART(9600);
 	int value;
-	int valueMaxRef = readPotValue();
+	int valueMaxRef = 0;
 	
     while(1) // Exécution en continue du programme
     {
 		PORTD = 0b00000000; //allumer only D4
+		
 		value = readPotValue();
-		if(value < ((valueMaxRef/3)*2))
+		
+		
+		if(value > valueMaxRef) //Changement de max (si besoin)
+			valueMaxRef = value;
+			
+			
+		if(value > ((valueMaxRef/4)))
 			PORTD |= 0b00010000; //allumer only D4
 		
-		if(value > ((valueMaxRef/3)))
+		if(value > ((valueMaxRef/4)*2))
 			PORTD |= 0b00100000; //allumer only D5
+			
+		if(value > ((valueMaxRef/4)*3))
+			PORTD |= 0b01000000; //allumer only D5
 		
 		_delay_ms (250);
 		printf("%d\n", readPotValue());
