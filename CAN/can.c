@@ -12,7 +12,7 @@ static int uart_putchar(char c, FILE *stream);
 void setup (void)
 {
 
-	DDRD = 0b01110000; // broche D4 et D5
+	DDRD = 0b01110000; // broche D4, D5, D6
 	PORTD = 0b00000000; //Port D
 	
 	DDRC = 0b00000000; //initialisation des inputs sur A0
@@ -66,13 +66,13 @@ int main (void)
 {
 	
 	setup();
-	init_USART(9600);
+	init_USART(BAUD);
 	int value;
 	int valueMaxRef = 0;
 	
     while(1) // Exécution en continue du programme
     {
-		PORTD = 0b00000000; //allumer only D4
+		PORTD = 0b00000000; 
 		
 		value = readPotValue();
 		
@@ -82,13 +82,13 @@ int main (void)
 			
 			
 		if(value > ((valueMaxRef/4)))
-			PORTD |= 0b00010000; //allumer only D4
+			PORTD |= 0b00010000; //allumer D4
 		
 		if(value > ((valueMaxRef/4)*2))
-			PORTD |= 0b00100000; //allumer only D5
+			PORTD |= 0b00100000; //allumer D5
 			
 		if(value > ((valueMaxRef/4)*3))
-			PORTD |= 0b01000000; //allumer only D5
+			PORTD |= 0b01000000; //allumer D6
 		
 		_delay_ms (250);
 		printf("%d\n", readPotValue());

@@ -335,18 +335,18 @@
  408               	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:00000000 can.c
-C:\Users\Barth\AppData\Local\Temp/cc3R1YD4.s:2      *ABS*:0000003f __SREG__
-C:\Users\Barth\AppData\Local\Temp/cc3R1YD4.s:3      *ABS*:0000003e __SP_H__
-C:\Users\Barth\AppData\Local\Temp/cc3R1YD4.s:4      *ABS*:0000003d __SP_L__
-C:\Users\Barth\AppData\Local\Temp/cc3R1YD4.s:5      *ABS*:00000034 __CCP__
-C:\Users\Barth\AppData\Local\Temp/cc3R1YD4.s:6      *ABS*:00000000 __tmp_reg__
-C:\Users\Barth\AppData\Local\Temp/cc3R1YD4.s:7      *ABS*:00000001 __zero_reg__
-C:\Users\Barth\AppData\Local\Temp/cc3R1YD4.s:18     .text:00000000 setup
-C:\Users\Barth\AppData\Local\Temp/cc3R1YD4.s:48     .text:0000001e readPotValue
-C:\Users\Barth\AppData\Local\Temp/cc3R1YD4.s:71     .text:00000038 init_USART
-C:\Users\Barth\AppData\Local\Temp/cc3R1YD4.s:345    .data:0000000e mystdout.1435
-C:\Users\Barth\AppData\Local\Temp/cc3R1YD4.s:121    .text:0000007e uart_putchar
-C:\Users\Barth\AppData\Local\Temp/cc3R1YD4.s:161    .text:000000a0 main
+C:\Users\Barth\AppData\Local\Temp/ccLhOAOe.s:2      *ABS*:0000003f __SREG__
+C:\Users\Barth\AppData\Local\Temp/ccLhOAOe.s:3      *ABS*:0000003e __SP_H__
+C:\Users\Barth\AppData\Local\Temp/ccLhOAOe.s:4      *ABS*:0000003d __SP_L__
+C:\Users\Barth\AppData\Local\Temp/ccLhOAOe.s:5      *ABS*:00000034 __CCP__
+C:\Users\Barth\AppData\Local\Temp/ccLhOAOe.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\Barth\AppData\Local\Temp/ccLhOAOe.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\Barth\AppData\Local\Temp/ccLhOAOe.s:18     .text:00000000 setup
+C:\Users\Barth\AppData\Local\Temp/ccLhOAOe.s:48     .text:0000001e readPotValue
+C:\Users\Barth\AppData\Local\Temp/ccLhOAOe.s:71     .text:00000038 init_USART
+C:\Users\Barth\AppData\Local\Temp/ccLhOAOe.s:345    .data:0000000e mystdout.1435
+C:\Users\Barth\AppData\Local\Temp/ccLhOAOe.s:121    .text:0000007e uart_putchar
+C:\Users\Barth\AppData\Local\Temp/ccLhOAOe.s:161    .text:000000a0 main
 
 UNDEFINED SYMBOLS
 __divmodsi4
