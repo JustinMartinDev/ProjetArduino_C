@@ -1,0 +1,279 @@
+   1               		.file	"main.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               	.global	setup
+  12               	setup:
+  13               	.LFB7:
+  14               		.file 1 "main.c"
+   1:main.c        **** #include <avr/io.h>
+   2:main.c        **** #include <stdio.h>
+   3:main.c        **** #include <util/delay.h>
+   4:main.c        **** #include <avr/interrupt.h>
+   5:main.c        **** 
+   6:main.c        **** void setup (void);
+   7:main.c        **** void setup (void)
+   8:main.c        **** {
+  15               		.loc 1 8 0
+  16               		.cfi_startproc
+  17               	/* prologue: function */
+  18               	/* frame size = 0 */
+  19               	/* stack size = 0 */
+  20               	.L__stack_usage = 0
+   9:main.c        **** 
+  10:main.c        **** 	DDRD = 0b00110100; //initialisation des inputs et outputs sur D
+  21               		.loc 1 10 0
+  22 0000 84E3      		ldi r24,lo8(52)
+  23 0002 8AB9      		out 0xa,r24
+  11:main.c        **** 	PORTD = 0b00100000; //Initialisation du port D (D5 sous tension)
+  24               		.loc 1 11 0
+  25 0004 80E2      		ldi r24,lo8(32)
+  26 0006 8BB9      		out 0xb,r24
+  12:main.c        **** 	
+  13:main.c        **** 	SREG  = 0b10000000; //Permet les interruptions
+  27               		.loc 1 13 0
+  28 0008 80E8      		ldi r24,lo8(-128)
+  29 000a 8FBF      		out __SREG__,r24
+  14:main.c        **** 	
+  15:main.c        **** 	TCCR1A = 0b00000000;//Initialisation du mode de fonctionnement du timer
+  30               		.loc 1 15 0
+  31 000c 1092 8000 		sts 128,__zero_reg__
+  16:main.c        **** 	TCCR1B = 0b00000101;//Initialisation de la fréquence du registre
+  32               		.loc 1 16 0
+  33 0010 85E0      		ldi r24,lo8(5)
+  34 0012 8093 8100 		sts 129,r24
+  17:main.c        **** 	TIMSK1 = 0b00000001;
+  35               		.loc 1 17 0
+  36 0016 81E0      		ldi r24,lo8(1)
+  37 0018 8093 6F00 		sts 111,r24
+  18:main.c        **** 	TCNT1 =  49910; //65535 -(1/64*10^6) : 1000ms	
+  38               		.loc 1 18 0
+  39 001c 86EF      		ldi r24,lo8(-10)
+  40 001e 92EC      		ldi r25,lo8(-62)
+  41 0020 9093 8500 		sts 132+1,r25
+  42 0024 8093 8400 		sts 132,r24
+  19:main.c        **** 	
+  20:main.c        **** 	
+  21:main.c        **** 	
+  22:main.c        **** 	
+  23:main.c        **** 	EICRA = 0b00000100; //Déclenchement sur changement de niveau logique
+  43               		.loc 1 23 0
+  44 0028 84E0      		ldi r24,lo8(4)
+  45 002a 8093 6900 		sts 105,r24
+  24:main.c        **** 	EIMSK = 0b00000010;
+  46               		.loc 1 24 0
+  47 002e 82E0      		ldi r24,lo8(2)
+  48 0030 8DBB      		out 0x1d,r24
+  49 0032 0895      		ret
+  50               		.cfi_endproc
+  51               	.LFE7:
+  53               	.global	__vector_13
+  55               	__vector_13:
+  56               	.LFB8:
+  25:main.c        **** 	
+  26:main.c        **** 	
+  27:main.c        **** }
+  28:main.c        **** 
+  29:main.c        **** 
+  30:main.c        **** ISR(TIMER1_OVF_vect){
+  57               		.loc 1 30 0
+  58               		.cfi_startproc
+  59 0034 1F92      		push r1
+  60               	.LCFI0:
+  61               		.cfi_def_cfa_offset 3
+  62               		.cfi_offset 1, -2
+  63 0036 0F92      		push r0
+  64               	.LCFI1:
+  65               		.cfi_def_cfa_offset 4
+  66               		.cfi_offset 0, -3
+  67 0038 0FB6      		in r0,__SREG__
+  68 003a 0F92      		push r0
+  69 003c 1124      		clr __zero_reg__
+  70 003e 8F93      		push r24
+  71               	.LCFI2:
+  72               		.cfi_def_cfa_offset 5
+  73               		.cfi_offset 24, -4
+  74 0040 9F93      		push r25
+  75               	.LCFI3:
+  76               		.cfi_def_cfa_offset 6
+  77               		.cfi_offset 25, -5
+  78 0042 EF93      		push r30
+  79               	.LCFI4:
+  80               		.cfi_def_cfa_offset 7
+  81               		.cfi_offset 30, -6
+  82 0044 FF93      		push r31
+  83               	.LCFI5:
+  84               		.cfi_def_cfa_offset 8
+  85               		.cfi_offset 31, -7
+  86               	/* prologue: Signal */
+  87               	/* frame size = 0 */
+  88               	/* stack size = 7 */
+  89               	.L__stack_usage = 7
+  31:main.c        **** 	SREG &= 0b00000000;//Bloque les interruptions
+  90               		.loc 1 31 0
+  91 0046 8FB7      		in r24,__SREG__
+  92 0048 1FBE      		out __SREG__,__zero_reg__
+  32:main.c        **** 	
+  33:main.c        **** 	PORTD ^= 0b00010000; // Allume/Eteint la led D4
+  93               		.loc 1 33 0
+  94 004a 9BB1      		in r25,0xb
+  95 004c 80E1      		ldi r24,lo8(16)
+  96 004e 8927      		eor r24,r25
+  97 0050 8BB9      		out 0xb,r24
+  34:main.c        **** 	
+  35:main.c        **** 	TIFR1 &= 0b00000000;
+  98               		.loc 1 35 0
+  99 0052 86B3      		in r24,0x16
+ 100 0054 16BA      		out 0x16,__zero_reg__
+  36:main.c        **** 	/*
+  37:main.c        **** 	if(first%2 == 0) TCNT1 = 49910;
+  38:main.c        **** 	else TCNT1 = 60000;
+  39:main.c        **** 	first++;
+  40:main.c        **** 	*/
+  41:main.c        **** 	TCNT1 = 49910;
+ 101               		.loc 1 41 0
+ 102 0056 86EF      		ldi r24,lo8(-10)
+ 103 0058 92EC      		ldi r25,lo8(-62)
+ 104 005a 9093 8500 		sts 132+1,r25
+ 105 005e 8093 8400 		sts 132,r24
+  42:main.c        **** 	
+  43:main.c        **** 	
+  44:main.c        **** 	TIMSK1 |= 0b00000001;
+ 106               		.loc 1 44 0
+ 107 0062 EFE6      		ldi r30,lo8(111)
+ 108 0064 F0E0      		ldi r31,0
+ 109 0066 8081      		ld r24,Z
+ 110 0068 8160      		ori r24,lo8(1)
+ 111 006a 8083      		st Z,r24
+  45:main.c        **** 	SREG |= 0b10000000;//Autorise les interruptions
+ 112               		.loc 1 45 0
+ 113 006c 8FB7      		in r24,__SREG__
+ 114 006e 8068      		ori r24,lo8(-128)
+ 115 0070 8FBF      		out __SREG__,r24
+ 116               	/* epilogue start */
+  46:main.c        **** }
+ 117               		.loc 1 46 0
+ 118 0072 FF91      		pop r31
+ 119 0074 EF91      		pop r30
+ 120 0076 9F91      		pop r25
+ 121 0078 8F91      		pop r24
+ 122 007a 0F90      		pop r0
+ 123 007c 0FBE      		out __SREG__,r0
+ 124 007e 0F90      		pop r0
+ 125 0080 1F90      		pop r1
+ 126 0082 1895      		reti
+ 127               		.cfi_endproc
+ 128               	.LFE8:
+ 130               	.global	__vector_2
+ 132               	__vector_2:
+ 133               	.LFB9:
+  47:main.c        **** 
+  48:main.c        **** 
+  49:main.c        **** 
+  50:main.c        **** ISR(INT1_vect){
+ 134               		.loc 1 50 0
+ 135               		.cfi_startproc
+ 136 0084 1F92      		push r1
+ 137               	.LCFI6:
+ 138               		.cfi_def_cfa_offset 3
+ 139               		.cfi_offset 1, -2
+ 140 0086 0F92      		push r0
+ 141               	.LCFI7:
+ 142               		.cfi_def_cfa_offset 4
+ 143               		.cfi_offset 0, -3
+ 144 0088 0FB6      		in r0,__SREG__
+ 145 008a 0F92      		push r0
+ 146 008c 1124      		clr __zero_reg__
+ 147 008e 8F93      		push r24
+ 148               	.LCFI8:
+ 149               		.cfi_def_cfa_offset 5
+ 150               		.cfi_offset 24, -4
+ 151 0090 9F93      		push r25
+ 152               	.LCFI9:
+ 153               		.cfi_def_cfa_offset 6
+ 154               		.cfi_offset 25, -5
+ 155               	/* prologue: Signal */
+ 156               	/* frame size = 0 */
+ 157               	/* stack size = 5 */
+ 158               	.L__stack_usage = 5
+  51:main.c        **** 	SREG &= 0b00000000;//Bloque les interruptions
+ 159               		.loc 1 51 0
+ 160 0092 8FB7      		in r24,__SREG__
+ 161 0094 1FBE      		out __SREG__,__zero_reg__
+  52:main.c        **** 	
+  53:main.c        **** 	PORTD ^= 0b00100100; // Allume/Eteint la led (changement d'etat)
+ 162               		.loc 1 53 0
+ 163 0096 9BB1      		in r25,0xb
+ 164 0098 84E2      		ldi r24,lo8(36)
+ 165 009a 8927      		eor r24,r25
+ 166 009c 8BB9      		out 0xb,r24
+  54:main.c        **** 	
+  55:main.c        **** 
+  56:main.c        **** 	
+  57:main.c        **** 	
+  58:main.c        **** 	EIFR &= 0b00000000;//INTF1 à 0
+ 167               		.loc 1 58 0
+ 168 009e 8CB3      		in r24,0x1c
+ 169 00a0 1CBA      		out 0x1c,__zero_reg__
+  59:main.c        **** 
+  60:main.c        **** 	
+  61:main.c        **** 	SREG |= 0b10000000;//Autorise les interruptions
+ 170               		.loc 1 61 0
+ 171 00a2 8FB7      		in r24,__SREG__
+ 172 00a4 8068      		ori r24,lo8(-128)
+ 173 00a6 8FBF      		out __SREG__,r24
+ 174               	/* epilogue start */
+  62:main.c        **** }
+ 175               		.loc 1 62 0
+ 176 00a8 9F91      		pop r25
+ 177 00aa 8F91      		pop r24
+ 178 00ac 0F90      		pop r0
+ 179 00ae 0FBE      		out __SREG__,r0
+ 180 00b0 0F90      		pop r0
+ 181 00b2 1F90      		pop r1
+ 182 00b4 1895      		reti
+ 183               		.cfi_endproc
+ 184               	.LFE9:
+ 186               		.section	.text.startup,"ax",@progbits
+ 187               	.global	main
+ 189               	main:
+ 190               	.LFB10:
+  63:main.c        **** 
+  64:main.c        **** int main (void) 
+  65:main.c        **** {
+ 191               		.loc 1 65 0
+ 192               		.cfi_startproc
+ 193               	/* prologue: function */
+ 194               	/* frame size = 0 */
+ 195               	/* stack size = 0 */
+ 196               	.L__stack_usage = 0
+  66:main.c        **** 	
+  67:main.c        **** 	setup();
+ 197               		.loc 1 67 0
+ 198 0000 0E94 0000 		call setup
+ 199               	.LVL0:
+ 200               	.L5:
+ 201 0004 00C0      		rjmp .L5
+ 202               		.cfi_endproc
+ 203               	.LFE10:
+ 205               		.text
+ 206               	.Letext0:
+ 207               		.file 2 "/usr/lib/avr/include/stdint.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 main.c
+     /tmp/ccROWbMG.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccROWbMG.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccROWbMG.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccROWbMG.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccROWbMG.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccROWbMG.s:12     .text:0000000000000000 setup
+     /tmp/ccROWbMG.s:55     .text:0000000000000034 __vector_13
+     /tmp/ccROWbMG.s:132    .text:0000000000000084 __vector_2
+     /tmp/ccROWbMG.s:189    .text.startup:0000000000000000 main
+
+NO UNDEFINED SYMBOLS
