@@ -1,7 +1,7 @@
 # Titre Sketch : Blink LED PWM
 # Description : 
 
-Permet de faire modifier l'intensité d'une LED en fonction d'un potentiomètre, une seconde LED commandée via un seuil séléctionné par l'utilisateur
+Permet de modifier l'intensité d'une LED en fonction d'un potentiomètre, une seconde LED commandée via un seuil séléctionné par l'utilisateur
 
 # Schéma: 
 
