@@ -5,7 +5,7 @@ Utilise une interruption materiel (bouton) pour changer l'état d'une LED (D5) e
 
 # Schéma: 
 
-![Schéma](https://raw.githubusercontent.com/JustinMartinDev/ProjetArduino_C/master/Arduino_Bouton_Poussoir_V1/shema_arduino.png)
+![Schéma](https://raw.githubusercontent.com/JustinMartinDev/ProjetArduino_C/master/Arduino_Bouton_Poussoir_V1/schema_arduino.png)
 
 # Utilisation :
 

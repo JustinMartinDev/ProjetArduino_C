@@ -42,7 +42,7 @@ void loop() {
 void InitFunctionRef(int valuePot){
   Serial.print("Actual value : ");
   Serial.println(valuePot);
-  Serial.println("Press button to set as value Ref");//Envoi en com serie la valeur actuelle du potentiometre
+  Serial.println("Press button to set value as Ref");//Envoi en com serie la valeur actuelle du potentiometre
   
   /*Si le bouton est pressé on initialise le seuil avec la valeur actuelle du potentiometre*/
   if(digitalRead(BUTTON_D4) == HIGH){
