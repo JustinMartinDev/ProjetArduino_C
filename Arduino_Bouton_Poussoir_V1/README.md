@@ -1,7 +1,7 @@
 # Titre Sketch : Boutton Poussoir V1
 # Description : 
 
-Utilise une interruption materiel (bouton) pour changer l'état d'une LED (D5) et sinon fait clignoter une autre LED en continue (D4)
+Utilise une interruption materiel (bouton) pour changer l'état d'une LED (D5) et sinon fait clignoter une autre LED en continu (D4)
 
 # Schéma: 
 
