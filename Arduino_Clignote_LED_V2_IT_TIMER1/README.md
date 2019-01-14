@@ -8,3 +8,7 @@ Utilise une interruption logicielle pour faire clignoter 2 LED, la LED D4 s'allu
 
 # Utilisation :
 Pas de consigne particulière
+
+Matériel nécessaire:
+LED sur le port D3
+LED sur le port D4
