@@ -1,11 +1,9 @@
-# Titre Sketch : Boutton Poussoir V1
+# Titre Sketch : Test_Arduino_CodeBlocks
 # Description : 
 
 Utilise une interruption materiel (bouton) pour changer l'état d'une LED (D5) et sinon fait clignoter une autre LED en continu (D4)
 
-# Schéma: 
 
-![Schéma](https://raw.githubusercontent.com/JustinMartinDev/ProjetArduino_C/master/Arduino_Bouton_Poussoir_V1/schema_arduino.png)
 
 # Utilisation :
 

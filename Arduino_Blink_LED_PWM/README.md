@@ -1,7 +1,7 @@
 # Titre Sketch : Blink LED PWM
 # Description : 
 
-Permet de modifier l'intensité d'une LED en fonction d'un potentiomètre, une seconde LED commandée via un seuil séléctionné par l'utilisateur
+Permet de modifier l'intensité d'une LED en fonction d'un potentiomètre, une seconde LED commandée via un seuil sélectionné par l'utilisateur
 
 # Schéma: 
 
@@ -14,6 +14,10 @@ Une fois le code téléversé, ouvrez un moniteur série sur le port de communic
 ![Serial com init](https://raw.githubusercontent.com/JustinMartinDev/ProjetArduino_C/master/Arduino_Blink_LED_PWM/Serial_com_init.PNG)
 
 
-
+Matériel nécessaire:
+LED sur le port D5
+LED sur le port D6 
+Potentiometre sur le port A0
+Boutton sur le port D4
 
 

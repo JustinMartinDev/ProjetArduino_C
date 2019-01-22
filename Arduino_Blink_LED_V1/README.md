@@ -10,3 +10,5 @@ Permet de faire clignoter une LED
 # Utilisation :
 Pas de consigne particulière
 
+Matériel nécessaire:
+LED sur le port D5

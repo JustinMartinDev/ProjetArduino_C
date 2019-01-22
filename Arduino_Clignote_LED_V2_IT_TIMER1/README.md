@@ -1,10 +1,14 @@
 # Titre Sketch : Blink LED V2 IT_Timer1
 # Description : 
 
-Utilise une interruption logiciel pour faire clignoter 2 LED, la LED D4 s'allume quand la LED D5 s'éteint et vise versa. La période durant laquel la LED D4 est allumé est différente de celle de D5
+Utilise une interruption logicielle pour faire clignoter 2 LED, la LED D4 s'allume quand la LED D5 s'éteint et vice versa. La période durant laquelle la LED D4 est allumée est différente de celle de D5
 # Schéma: 
 
-![Schéma](https://raw.githubusercontent.com/JustinMartinDev/ProjetArduino_C/master/Arduino_Clignote_LED_V2_IT_TIMER1/shema_arduino.png)
+![Schéma](https://raw.githubusercontent.com/JustinMartinDev/ProjetArduino_C/master/Arduino_Clignote_LED_V2_IT_TIMER1/schema_arduino.png)
 
 # Utilisation :
 Pas de consigne particulière
+
+Matériel nécessaire:
+LED sur le port D3
+LED sur le port D4
