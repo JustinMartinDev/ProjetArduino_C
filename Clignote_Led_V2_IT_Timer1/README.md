@@ -1,4 +1,4 @@
-# Titre Sketch : Clignotement de la led via interruption timer0
+# Titre Sketch : Clignotement de la led via interruption timer
 # Description :
 
 Contient le programme C permettant de faire clignoter la LED branchée sur le port D2 avec le Timer1,
