@@ -1,12 +1,13 @@
 /* Fichier noyau.h                                                                            */
-/* Fichier d'en tête                                                                          */
-/* Contient la définition des constantes symboliques utilisées                                */
+/* Fichier d'en tï¿½te                                                                          */
+/* Contient la dï¿½finition des constantes symboliques utilisï¿½es                                */
 /* Contient le prototypes des fonctions du fichier noyau.c                                    */
 
 
 #include <stdlib.h>
 #include <avr/interrupt.h>
 #include <Arduino.h>
+
 
 extern unsigned char _csreg;
 

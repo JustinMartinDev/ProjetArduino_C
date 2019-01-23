@@ -5,13 +5,15 @@
 #ifndef NOYAU_FIFO_H
 #define NOYAU_FIFO_H
 
+#include "ProcessDescriptor.h"
+
 typedef struct {
 
-    long int ptrListProcess,
-     head,
-    int queue,
-    int count,
-    int actifProcessIndice
+    /*int head,
+    int queue,*/
+//    ProcessDescriptor content[NB_PROCESS];
+    int count;
+    int actifProcessIndice;
 } FIFO;
 
 

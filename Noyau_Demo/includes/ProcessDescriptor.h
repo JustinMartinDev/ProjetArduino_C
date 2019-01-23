@@ -6,15 +6,14 @@
 #define NOYAU_PROCESSDESCRIPTOR_H
 
 typedef struct {
+    int pid;
+    int priority; //[0,255]
+    int status;
 
-    int pid,
-    int priority, //[0,255]
-    int status,
-
-    long int* ptrPile,
-    long int* ptrPileWrittable,
-    void* ptrProcess
-    void* listArg
+    long int *ptrPile;
+    long int *ptrPileWrittable;
+    void *ptrProcess;
+    void *listArg;
 //    int pos;
 
 } ProcessDescriptor;

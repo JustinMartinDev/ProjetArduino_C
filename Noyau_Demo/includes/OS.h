@@ -6,16 +6,18 @@
 #define NOYAU_FIFO_H
 
 #include "./FIFO.h"
-#include "ProcessDescriptor.h"
+#include "./ProcessDescriptor.h"
 
 typedef struct {
-    char* OSName,
-    char* VersionOS,
-    FIFO* listProcessDescriptor,
-    FIFO* queueExploitation,
-    ProcessDescriptor* actifProcess,
+    char *nameOS;
+    char *versionOS;
+
+    ProcessDescriptor *actifProcess;
+    FIFO *listProcessDescriptor;
+    FIFO *queueExploitation;
 } OS;
 
-
+OS* OS_new(char *name, char*version);
+void OS_print(OS *os);
 
 #endif //FIFO_H
