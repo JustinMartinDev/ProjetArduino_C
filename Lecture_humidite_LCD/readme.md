@@ -11,5 +11,5 @@ Une fois téléversé, vous pouvez observé les valeurs sur l'écran LCD, si la 
 (nous voulions lié la couleur rouge à la temperature et le bleu à l'humidité)
 
 Matériel nécessaire:
-Capteur humidité sur D2
-Ecran LCD sur I2C
+* Capteur humidité sur D2
+* Ecran LCD sur I2C
