@@ -1,5 +1,6 @@
-# Titre Sketch : Clignotement de led via interruption timer et changement d'état d'une autre via interruption materielle
-# Description :
+# Titre Sketch : BP_LED_INT1_ITTIMER1_V2
+Clignotement de led via interruption timer et changement d'état d'une autre via interruption materielle
+# Description : 
 
 Permet de changer l'état d'une LED (sur D5) avec une interruption materielle (sur D3). Tout en faisant clignoter une autre LED (sur D4) à l'aide d'un Timer
 

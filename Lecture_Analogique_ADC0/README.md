@@ -1,4 +1,5 @@
-# Titre Sketch : Commande de LED via un potentiometre
+# Titre Sketch : Lecture_Analogique_ADC0
+Commande de LED via un potentiometre
 # Description :
 
 Contient le programme C permettant de faire d'allumer 3 LED en fonction le la valeur d'un potentiometre

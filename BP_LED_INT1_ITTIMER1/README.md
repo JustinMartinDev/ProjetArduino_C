@@ -1,4 +1,5 @@
-# Titre Sketch : Clignotement de led via interruption materielle
+# Titre Sketch : BP_LED_INT1_ITTIMER1
+Clignotement de led via interruption materielle
 # Description :
 
 Permet de changer l'état d'une LED (sur D5) avec une interruption materielle (sur D3). Tout en faisant clignoter une autre LED (sur D4)

@@ -1,4 +1,5 @@
-# Titre Sketch : Clignotement de led et communication serie
+# Titre Sketch : Clignote_Led_V1_USART/schema_arduino
+Clignotement de led et communication serie
 # Description :
 
 Permet de changer l'état d'une LED (sur D2) tout en envoyant un message via une liason serie (par USB)
