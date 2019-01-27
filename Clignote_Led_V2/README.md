@@ -12,6 +12,6 @@ Permet de changer faire clignoter 3 LED en allumant et éteignant les un après 
 Pas de consigne particulière
 
 Matériel nécessaire:
-LED sur le port D6
-LED sur le port D5
-LED sur le port D4
+* LED sur le port D6
+* LED sur le port D5
+* LED sur le port D4
