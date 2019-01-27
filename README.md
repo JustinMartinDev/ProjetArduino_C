@@ -21,10 +21,10 @@ Une fois le code téléversé, ouvrez un moniteur série sur le port de communic
 ![Serial com init](https://raw.githubusercontent.com/JustinMartinDev/ProjetArduino_C/master/Arduino_Blink_LED_PWM/Serial_com_init.PNG)
 
 Matériel nécessaire:
-LED sur le port D5
-LED sur le port D6 
-Potentiometre sur le port A0
-Boutton sur le port D4
+* LED sur le port D5
+* LED sur le port D6 
+* Potentiometre sur le port A0
+* Boutton sur le port D4
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## Titre Sketch : Blink LED V1
@@ -40,7 +40,7 @@ Permet de faire clignoter une LED
 Pas de consigne particulière
 
 Matériel nécessaire:
-LED sur le port D5
+* LED sur le port D5
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## Titre Sketch : Boutton Poussoir V1
@@ -57,9 +57,9 @@ Utilise une interruption materiel (bouton) pour changer l'état d'une LED (D5) e
 Appuyez sur le bouton pour commander le changement d'état de la LED D5
 
 Materiel necessaire :
-LED sur le port D4
-LED sur le port D5
-Boutton poussoir sur le port D2
+* LED sur le port D4
+* LED sur le port D5
+* Boutton poussoir sur le port D2
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## Titre Sketch : Blink LED V2 IT_Timer1
@@ -76,8 +76,8 @@ Utilise une interruption logicielle pour faire clignoter 2 LED, la LED D4 s'allu
 Pas de consigne particulière
 
 Matériel nécessaire:
-LED sur le port D3
-LED sur le port D4
+* LED sur le port D3
+* LED sur le port D4
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## Titre Sketch : BP_LED_INT1_ITTIMER1
@@ -95,9 +95,9 @@ Permet de changer l'état d'une LED (sur D5) avec une interruption materielle (s
 Une fois le code téléversé, vous pouvez changer l'etat d'une led via le bouton, tout en voyant clignoter la seconde
 
 Matériel nécessaire:
-LED sur le port D5
-LED sur le port D4
-Bouton sur le port D3
+* LED sur le port D5
+* LED sur le port D4
+* Bouton sur le port D3
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## Titre Sketch : BP_LED_INT1_ITTIMER1_V2
@@ -115,9 +115,9 @@ Permet de changer l'état d'une LED (sur D5) avec une interruption materielle (s
 Une fois le code téléversé, vous pouvez changer l'etat de la LED (D5) via le bouton, tout en voyant clignoter la seconde LED (D4)
 
 Matériel nécessaire:
-LED sur le port D5
-LED sur le port D4
-Bouton sur le port D3
+* LED sur le port D5
+* LED sur le port D4
+* Bouton sur le port D3
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## Titre Sketch : Clignote_Led_V1
@@ -133,10 +133,6 @@ Permet de faire clignoter la led interne de l'arduino uno
 ## Utilisation :
 
 Pas de consigne particulière
-
-Matériel nécessaire:
-Arduino uno
-
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## Titre Sketch : Clignote_Led_V1_USART/schema_arduino
 Clignotement de led et communication serie
@@ -153,7 +149,7 @@ Permet de changer l'état d'une LED (sur D2) tout en envoyant un message via une
 Une fois le code téléversé, ouvrez un moniteur serie sur le port de communcation ouvert avec votre carte. Quand la led change d'état vous recevez un message vous indiquant le nouvel état.
 
 Matériel nécessaire:
-LED sur le port D2
+* LED sur le port D2
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## Titre Sketch : Clignote_Led_v2
@@ -170,9 +166,9 @@ Permet de changer faire clignoter 3 LED en allumant et éteignant les un après 
 Pas de consigne particulière
 
 Matériel nécessaire:
-LED sur le port D6
-LED sur le port D5
-LED sur le port D4
+* LED sur le port D6
+* LED sur le port D5
+* LED sur le port D4
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## Titre Sketch : Clignote_Led_V2_IT_Timer1
@@ -190,7 +186,7 @@ la led est allumée plus longtemps qu'elle est éteinte
 Pas de consigne particulière
 
 Matériel nécessaire:
-LED sur D2
+* LED sur D2
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## Titre Sketch : Lecture_Analogique_ADC0
@@ -212,9 +208,9 @@ Une fois téléversé, tournez le potentiomètre au maximum (une communication s
 Il est possible que vous trouviez cette méthode étrange mais elle avait été conçue pour permettre de régler la valeur de référence mais cette fonctionnalité n'a pas été abouti sur la version C. (disponible sur la version Arduino)
 
 Matériel nécessaire:
-LED sur D4
-LED sur D5
-LED sur D6
+* LED sur D4
+* LED sur D5
+* LED sur D6
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## Titre Sketch : Test_Arduino_CodeBlocks
@@ -227,6 +223,6 @@ Utilise une interruption materiel (bouton) pour changer l'état d'une LED (D5) e
 Appuyez sur le bouton pour commander le changement d'état de la LED D5
 
 Materiel necessaire :
-LED sur le port D4
-LED sur le port D5
-Boutton poussoir sur le port D2
+* LED sur le port D4
+* LED sur le port D5
+* Boutton poussoir sur le port D2
