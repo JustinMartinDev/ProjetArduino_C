@@ -11,4 +11,4 @@ Ces valeurs sont ensuite transmises via liason serie
 Une fois téléversé, ouvrez un moniteur serie afin d'observé les valeurs transmises par le capteur
 
 Matériel nécessaire:
-Capteur humidité sur D2
+* Capteur humidité sur D2
