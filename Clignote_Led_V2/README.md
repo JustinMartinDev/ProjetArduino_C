@@ -6,7 +6,7 @@ Permet de changer faire clignoter 3 LED en allumant et éteignant les un après 
 
 # Schéma: 
 
-![Schéma](https://raw.githubusercontent.com/JustinMartinDev/ProjetArduino_C/master/Clignote_Led_v2/schema_arduino.png)
+![Schéma](https://raw.githubusercontent.com/JustinMartinDev/ProjetArduino_C/master/Clignote_Led_V2/schema_arduino.png)
 
 # Utilisation :
 Pas de consigne particulière
