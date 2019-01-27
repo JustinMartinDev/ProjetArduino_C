@@ -134,7 +134,7 @@ Permet de faire clignoter la led interne de l'arduino uno
 
 Pas de consigne particulière
 ---------------------------------------------------------------------------------------------------------------------------------------
-## Titre Sketch : Clignote_Led_V1_USART/schema_arduino
+## Titre Sketch : Clignote_Led_V1_USART
 Clignotement de led et communication serie
 ## Description :
 
