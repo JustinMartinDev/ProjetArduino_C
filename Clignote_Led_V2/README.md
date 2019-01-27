@@ -1,4 +1,5 @@
-# Titre Sketch : Clignotement de 3 LEDs externes
+# Titre Sketch : Clignote_Led_v2
+Clignotement de 3 LEDs externes
 Description :
 
 Permet de changer faire clignoter 3 LED en allumant et éteignant les un après les autres.
