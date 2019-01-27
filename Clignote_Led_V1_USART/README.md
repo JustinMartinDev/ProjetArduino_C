@@ -13,4 +13,4 @@ Permet de changer l'état d'une LED (sur D2) tout en envoyant un message via une
 Une fois le code téléversé, ouvrez un moniteur serie sur le port de communcation ouvert avec votre carte. Quand la led change d'état vous recevez un message vous indiquant le nouvel état.
 
 Matériel nécessaire:
-LED sur le port D2
+* LED sur le port D2
