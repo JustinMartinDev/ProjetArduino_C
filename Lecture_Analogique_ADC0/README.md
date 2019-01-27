@@ -1,5 +1,5 @@
 # Titre Sketch : Lecture_Analogique_ADC0
-Commande de LED via un potentiometre
+Commande de LEDs via un potentiometre
 # Description :
 
 Contient le programme C permettant de faire d'allumer 3 LED en fonction le la valeur d'un potentiometre
@@ -19,3 +19,4 @@ Matériel nécessaire:
 LED sur D4
 LED sur D5
 LED sur D6
+Potentiometre sur A0
