@@ -15,7 +15,6 @@ Permet de modifier l'intensité d'une LED en fonction d'un potentiomètre, une s
 ![Schéma](https://raw.githubusercontent.com/JustinMartinDev/ProjetArduino_C/master/Arduino_Blink_LED_PWM/schema_arduino.png)
 
 ## Utilisation :
-
 Une fois le code téléversé, ouvrez un moniteur série sur le port de communication de votre carte. Cette phase permet d'initialiser votre valeur de seuil
 
 ![Serial com init](https://raw.githubusercontent.com/JustinMartinDev/ProjetArduino_C/master/Arduino_Blink_LED_PWM/Serial_com_init.PNG)
@@ -53,7 +52,6 @@ Utilise une interruption materiel (bouton) pour changer l'état d'une LED (D5) e
 ![Schéma](https://raw.githubusercontent.com/JustinMartinDev/ProjetArduino_C/master/Arduino_Bouton_Poussoir_V1/schema_arduino.png)
 
 ## Utilisation :
-
 Appuyez sur le bouton pour commander le changement d'état de la LED D5
 
 Materiel necessaire :
@@ -72,7 +70,6 @@ Utilise une interruption logicielle pour faire clignoter 2 LED, la LED D4 s'allu
 ![Schéma](https://raw.githubusercontent.com/JustinMartinDev/ProjetArduino_C/master/Arduino_Clignote_LED_V2_IT_TIMER1/schema_arduino.png)
 
 ## Utilisation :
-
 Pas de consigne particulière
 
 Matériel nécessaire:
@@ -91,7 +88,6 @@ Permet de changer l'état d'une LED (sur D5) avec une interruption materielle (s
 ![Schéma](https://raw.githubusercontent.com/JustinMartinDev/ProjetArduino_C/master/BP_LED_INT1_ITTIMER1/schema_arduino.png)
 
 ## Utilisation :
-
 Une fois le code téléversé, vous pouvez changer l'etat d'une led via le bouton, tout en voyant clignoter la seconde
 
 Matériel nécessaire:
@@ -131,8 +127,8 @@ Permet de faire clignoter la led interne de l'arduino uno
 ![Schéma](https://raw.githubusercontent.com/JustinMartinDev/ProjetArduino_C/master/Clignote_Led_V1/schema_arduino.png)
 
 ## Utilisation :
-
 Pas de consigne particulière
+
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## Titre Sketch : Clignote_Led_V1_USART
 Clignotement de led et communication serie
@@ -145,7 +141,6 @@ Permet de changer l'état d'une LED (sur D2) tout en envoyant un message via une
 ![Schéma](https://raw.githubusercontent.com/JustinMartinDev/ProjetArduino_C/master/Clignote_Led_V1_USART/schema_arduino.png)
 
 ## Utilisation :
-
 Une fois le code téléversé, ouvrez un moniteur serie sur le port de communcation ouvert avec votre carte. Quand la led change d'état vous recevez un message vous indiquant le nouvel état.
 
 Matériel nécessaire:
@@ -219,7 +214,6 @@ Matériel nécessaire:
 Utilise une interruption materiel (bouton) pour changer l'état d'une LED (D5) et sinon fait clignoter une autre LED en continu (D4)
 
 ## Utilisation :
-
 Appuyez sur le bouton pour commander le changement d'état de la LED D5
 
 Materiel necessaire :
