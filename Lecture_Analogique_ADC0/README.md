@@ -16,7 +16,7 @@ Une fois téléversé, tournez le potentiomètre au maximum (une communication s
 Il est possible que vous trouviez cette méthode étrange mais elle avait été conçue pour permettre de régler la valeur de référence mais cette fonctionnalité n'a pas été abouti sur la version C. (disponible sur la version Arduino)
 
 Matériel nécessaire:
-LED sur D4
-LED sur D5
-LED sur D6
-Potentiometre sur A0
+* LED sur D4
+* LED sur D5
+* LED sur D6
+* Potentiometre sur A0
