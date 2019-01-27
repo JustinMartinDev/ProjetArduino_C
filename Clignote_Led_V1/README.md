@@ -3,10 +3,11 @@
 
 Permet de faire clignoter la led interne de l'arduino uno 
 
+# Schema : 
 ![Schéma](https://raw.githubusercontent.com/JustinMartinDev/ProjetArduino_C/master/Clignote_Led_V1/schema_arduino.png)
 
 # Utilisation :
 Pas de consigne particulière
 
-Matériel nécessaire:
-Arduino uno
+Matériel nécessaire :
+* Arduino uno
