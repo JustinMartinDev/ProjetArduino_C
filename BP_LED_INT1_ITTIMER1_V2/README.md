@@ -13,6 +13,6 @@ Permet de changer l'état d'une LED (sur D5) avec une interruption materielle (s
 Une fois le code téléversé, vous pouvez changer l'etat de la LED (D5) via le bouton, tout en voyant clignoter la seconde LED (D4)
 
 Matériel nécessaire:
-LED sur le port D5
-LED sur le port D4
-Bouton sur le port D3
+* LED sur le port D5
+* LED sur le port D4
+* Bouton sur le port D3
