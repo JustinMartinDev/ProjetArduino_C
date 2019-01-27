@@ -142,7 +142,7 @@ Permet de changer l'état d'une LED (sur D2) tout en envoyant un message via une
 
 ## Schéma : 
 
-![Schéma](https://raw.githubusercontent.com/JustinMartinDev/ProjetArduino_C/master/Clignotement_Led_V1_USART/schema_arduino.png)
+![Schéma](https://raw.githubusercontent.com/JustinMartinDev/ProjetArduino_C/master/Clignote_Led_V1_USART/schema_arduino.png)
 
 ## Utilisation :
 
